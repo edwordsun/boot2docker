@@ -342,8 +342,8 @@ RUN set -ex; \
 RUN echo root > "$ROOTFS/etc/sysconfig/superuser"
 
 # add some timezone files so we're explicit about being UTC
-RUN echo 'UTC' > "$ROOTFS/etc/timezone" \
-	&& cp -vL /usr/share/zoneinfo/UTC "$ROOTFS/etc/localtime"
+RUN echo 'Asia/Shanghai' > "$ROOTFS/etc/timezone" \
+	&& cp -vL /usr/share/zoneinfo/Asia/Shanghai "$ROOTFS/etc/localtime"
 
 # make sure the "docker" group exists already
 RUN chroot "$ROOTFS" addgroup -S docker
